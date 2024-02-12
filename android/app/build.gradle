@@ -76,15 +76,21 @@ def reactNativeArchitectures() {
     return value ? value.split(",") : ["armeabi-v7a", "x86", "x86_64", "arm64-v8a"]
 }
 
+task copyDownloadableDepsToLibs() {
+    from configurations.compile
+    into 'libs'
+}
+
 android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
-    namespace "com.rndiffapp"
+    namespace "com.Awesomeproject"
+
 
     
     defaultConfig {
-        applicationId "com.awesomeproject"
+        applicationId "com.Awesomeproject"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
